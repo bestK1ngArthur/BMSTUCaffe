@@ -157,9 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				6A33114C223EE097007BB7E0 /* Table */,
-				6A33114A223ED1C6007BB7E0 /* CoolButton.swift */,
-				6A33114D223EE12C007BB7E0 /* CartView.swift */,
-				6A33114E223EE12C007BB7E0 /* CartView.xib */,
+				6A331153223EF7D0007BB7E0 /* Buttons */,
+				6A331151223EF768007BB7E0 /* Cart */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +170,23 @@
 				6A331141223E8F7A007BB7E0 /* DishCell.swift */,
 			);
 			path = Table;
+			sourceTree = "<group>";
+		};
+		6A331151223EF768007BB7E0 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				6A33114D223EE12C007BB7E0 /* CartView.swift */,
+				6A33114E223EE12C007BB7E0 /* CartView.xib */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		6A331153223EF7D0007BB7E0 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				6A33114A223ED1C6007BB7E0 /* CoolButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

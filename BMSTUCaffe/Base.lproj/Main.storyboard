@@ -177,11 +177,7 @@
                             <outlet property="delegate" destination="9Qb-Hx-Tgt" id="i6I-Ue-hX8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Меню" id="s7v-Dv-PfE">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Cart" id="JZb-qW-3WC">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Меню" id="s7v-Dv-PfE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ws-SH-YCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

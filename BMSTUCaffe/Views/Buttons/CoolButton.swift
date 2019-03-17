@@ -17,7 +17,7 @@ class CoolButton: UIButton {
                 return
             }
             
-            self.setBackgroundImage(image.withColor(newColor: imageTintColor), for: .normal)
+            self.setBackgroundImage(image.withColor(imageTintColor), for: .normal)
         }
     }
     

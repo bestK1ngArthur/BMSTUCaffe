@@ -16,7 +16,7 @@ class MenuViewController: UITableViewController {
     }
     
     var sections: [Section] = []
-    var cartView: CartView?
+    var cartContainer: CartContainterView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,11 +79,11 @@ class MenuViewController: UITableViewController {
         let cartViewHeight: CGFloat = 83
         let y: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height - cartViewHeight
         let frame = CGRect(x: 0, y: y, width: view.bounds.width, height: cartViewHeight)
-        let cartView = CartView(frame: frame)
+        let cartView = CartContainterView(frame: frame)
 
         UIApplication.shared.keyWindow?.addSubview(cartView)
         
-        self.cartView = cartView
+        self.cartContainer = cartView
     }
     
     // MARK: UITableViewDataSource
