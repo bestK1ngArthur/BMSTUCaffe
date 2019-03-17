@@ -19,6 +19,8 @@
 		6A331139223E6C9E007BB7E0 /* Caffe-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A331138223E6C9E007BB7E0 /* Caffe-01.json */; };
 		6A33113B223E6F45007BB7E0 /* String+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33113A223E6F45007BB7E0 /* String+Path.swift */; };
 		6A33113E223E7A84007BB7E0 /* Date+Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33113D223E7A84007BB7E0 /* Date+Day.swift */; };
+		6A331140223E85D2007BB7E0 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33113F223E85D2007BB7E0 /* AppManager.swift */; };
+		6A331142223E8F7A007BB7E0 /* DishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331141223E8F7A007BB7E0 /* DishCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		6A331138223E6C9E007BB7E0 /* Caffe-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Caffe-01.json"; sourceTree = "<group>"; };
 		6A33113A223E6F45007BB7E0 /* String+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Path.swift"; sourceTree = "<group>"; };
 		6A33113D223E7A84007BB7E0 /* Date+Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Day.swift"; sourceTree = "<group>"; };
+		6A33113F223E85D2007BB7E0 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		6A331141223E8F7A007BB7E0 /* DishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +73,10 @@
 			isa = PBXGroup;
 			children = (
 				6A331108223E49AF007BB7E0 /* AppDelegate.swift */,
+				6A33113F223E85D2007BB7E0 /* AppManager.swift */,
 				6A33111F223E5760007BB7E0 /* Models */,
 				6A33111C223E4BF9007BB7E0 /* Controllers */,
+				6A331143223E8F82007BB7E0 /* Views */,
 				6A331135223E6321007BB7E0 /* Services */,
 				6A331136223E6350007BB7E0 /* Resources */,
 				6A33113C223E6FC7007BB7E0 /* Extensions */,
@@ -131,6 +137,14 @@
 				6A33113D223E7A84007BB7E0 /* Date+Day.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6A331143223E8F82007BB7E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6A331141223E8F7A007BB7E0 /* DishCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +225,8 @@
 				6A331134223E631D007BB7E0 /* MenuService.swift in Sources */,
 				6A331109223E49AF007BB7E0 /* AppDelegate.swift in Sources */,
 				6A33113B223E6F45007BB7E0 /* String+Path.swift in Sources */,
+				6A331140223E85D2007BB7E0 /* AppManager.swift in Sources */,
+				6A331142223E8F7A007BB7E0 /* DishCell.swift in Sources */,
 				6A331121223E577C007BB7E0 /* Caffe.swift in Sources */,
 				6A33110B223E49AF007BB7E0 /* MenuViewController.swift in Sources */,
 			);
