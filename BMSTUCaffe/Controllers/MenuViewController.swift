@@ -16,10 +16,13 @@ class MenuViewController: UITableViewController {
     }
     
     var sections: [Section] = []
+    var cartView: CartView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        addCartView()
+        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
         
@@ -69,6 +72,18 @@ class MenuViewController: UITableViewController {
         sections.append(Section(name: currentSection!.rawValue, dishes: currentSectionDishes))
 
         return sections
+    }
+    
+    private func addCartView() {
+        
+        let cartViewHeight: CGFloat = 83
+        let y: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height - cartViewHeight
+        let frame = CGRect(x: 0, y: y, width: view.bounds.width, height: cartViewHeight)
+        let cartView = CartView(frame: frame)
+
+        UIApplication.shared.keyWindow?.addSubview(cartView)
+        
+        self.cartView = cartView
     }
     
     // MARK: UITableViewDataSource
