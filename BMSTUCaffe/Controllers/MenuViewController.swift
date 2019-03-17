@@ -21,6 +21,7 @@ class MenuViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.tableFooterView = UIView()
         
         if let sections = constructSections() {
             self.sections = sections
@@ -80,8 +81,18 @@ class MenuViewController: UITableViewController {
         return sections[section].dishes.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section].name
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let tableHeader = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuHeader.self)) as? MenuHeader else {
+            return UIView()
+        }
+        
+        tableHeader.nameLabel.text = sections[section].name.firstUppercased
+        
+        return tableHeader
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -21,6 +21,10 @@
 		6A33113E223E7A84007BB7E0 /* Date+Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33113D223E7A84007BB7E0 /* Date+Day.swift */; };
 		6A331140223E85D2007BB7E0 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33113F223E85D2007BB7E0 /* AppManager.swift */; };
 		6A331142223E8F7A007BB7E0 /* DishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331141223E8F7A007BB7E0 /* DishCell.swift */; };
+		6A331145223EA6ED007BB7E0 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331144223EA6ED007BB7E0 /* UIImage+Color.swift */; };
+		6A331147223EA72D007BB7E0 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331146223EA72D007BB7E0 /* UIColor+Hex.swift */; };
+		6A331149223EB0E3007BB7E0 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331148223EB0E3007BB7E0 /* MenuHeader.swift */; };
+		6A33114B223ED1C6007BB7E0 /* CoolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33114A223ED1C6007BB7E0 /* CoolButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		6A33113D223E7A84007BB7E0 /* Date+Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Day.swift"; sourceTree = "<group>"; };
 		6A33113F223E85D2007BB7E0 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		6A331141223E8F7A007BB7E0 /* DishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCell.swift; sourceTree = "<group>"; };
+		6A331144223EA6ED007BB7E0 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		6A331146223EA72D007BB7E0 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		6A331148223EB0E3007BB7E0 /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
+		6A33114A223ED1C6007BB7E0 /* CoolButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,8 @@
 			children = (
 				6A33113A223E6F45007BB7E0 /* String+Path.swift */,
 				6A33113D223E7A84007BB7E0 /* Date+Day.swift */,
+				6A331144223EA6ED007BB7E0 /* UIImage+Color.swift */,
+				6A331146223EA72D007BB7E0 /* UIColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -142,7 +152,9 @@
 		6A331143223E8F82007BB7E0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6A331148223EB0E3007BB7E0 /* MenuHeader.swift */,
 				6A331141223E8F7A007BB7E0 /* DishCell.swift */,
+				6A33114A223ED1C6007BB7E0 /* CoolButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,9 +236,13 @@
 				6A33111E223E5120007BB7E0 /* Dish.swift in Sources */,
 				6A331134223E631D007BB7E0 /* MenuService.swift in Sources */,
 				6A331109223E49AF007BB7E0 /* AppDelegate.swift in Sources */,
+				6A331149223EB0E3007BB7E0 /* MenuHeader.swift in Sources */,
 				6A33113B223E6F45007BB7E0 /* String+Path.swift in Sources */,
 				6A331140223E85D2007BB7E0 /* AppManager.swift in Sources */,
+				6A33114B223ED1C6007BB7E0 /* CoolButton.swift in Sources */,
+				6A331145223EA6ED007BB7E0 /* UIImage+Color.swift in Sources */,
 				6A331142223E8F7A007BB7E0 /* DishCell.swift in Sources */,
+				6A331147223EA72D007BB7E0 /* UIColor+Hex.swift in Sources */,
 				6A331121223E577C007BB7E0 /* Caffe.swift in Sources */,
 				6A33110B223E49AF007BB7E0 /* MenuViewController.swift in Sources */,
 			);

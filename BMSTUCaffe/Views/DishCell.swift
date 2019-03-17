@@ -12,14 +12,20 @@ class DishCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var outletLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    @IBOutlet weak var addButton: CoolButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        addButton.imageTintColor = UIColor(rgb: 0xFFE74C)
+        addButton.substrateColor = UIColor.black
     }
 
     func fillCell(dish: Dish) {
         nameLabel.text = dish.name
         outletLabel.text = dish.outlet
+        priceLabel.text = "\(dish.price)₽"
     }
 }
