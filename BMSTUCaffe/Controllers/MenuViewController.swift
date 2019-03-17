@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  MenuViewController.swift
 //  BMSTUCaffe
 //
 //  Created by a.belkov on 17/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

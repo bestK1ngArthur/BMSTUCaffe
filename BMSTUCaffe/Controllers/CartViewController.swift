@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  CartViewController.swift
 //  BMSTUCaffe
 //
 //  Created by a.belkov on 17/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class CartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
