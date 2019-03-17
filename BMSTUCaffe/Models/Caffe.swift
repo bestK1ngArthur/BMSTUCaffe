@@ -9,5 +9,7 @@
 import Foundation
 
 struct Caffe {
+    var id: Int
     var name: String
+    var company: String
 }

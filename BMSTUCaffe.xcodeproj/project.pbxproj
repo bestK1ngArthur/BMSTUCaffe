@@ -15,6 +15,10 @@
 		6A331115223E49B0007BB7E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A331113223E49B0007BB7E0 /* LaunchScreen.storyboard */; };
 		6A33111E223E5120007BB7E0 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33111D223E5120007BB7E0 /* Dish.swift */; };
 		6A331121223E577C007BB7E0 /* Caffe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331120223E577C007BB7E0 /* Caffe.swift */; };
+		6A331134223E631D007BB7E0 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331133223E631D007BB7E0 /* MenuService.swift */; };
+		6A331139223E6C9E007BB7E0 /* Caffe-01.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A331138223E6C9E007BB7E0 /* Caffe-01.json */; };
+		6A33113B223E6F45007BB7E0 /* String+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33113A223E6F45007BB7E0 /* String+Path.swift */; };
+		6A33113E223E7A84007BB7E0 /* Date+Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33113D223E7A84007BB7E0 /* Date+Day.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		6A331116223E49B0007BB7E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A33111D223E5120007BB7E0 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		6A331120223E577C007BB7E0 /* Caffe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caffe.swift; sourceTree = "<group>"; };
+		6A331133223E631D007BB7E0 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
+		6A331138223E6C9E007BB7E0 /* Caffe-01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Caffe-01.json"; sourceTree = "<group>"; };
+		6A33113A223E6F45007BB7E0 /* String+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Path.swift"; sourceTree = "<group>"; };
+		6A33113D223E7A84007BB7E0 /* Date+Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Day.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +71,10 @@
 				6A331108223E49AF007BB7E0 /* AppDelegate.swift */,
 				6A33111F223E5760007BB7E0 /* Models */,
 				6A33111C223E4BF9007BB7E0 /* Controllers */,
+				6A331135223E6321007BB7E0 /* Services */,
+				6A331136223E6350007BB7E0 /* Resources */,
+				6A33113C223E6FC7007BB7E0 /* Extensions */,
 				6A33110E223E49AF007BB7E0 /* Main.storyboard */,
-				6A331111223E49B0007BB7E0 /* Assets.xcassets */,
 				6A331113223E49B0007BB7E0 /* LaunchScreen.storyboard */,
 				6A331116223E49B0007BB7E0 /* Info.plist */,
 			);
@@ -87,6 +97,40 @@
 				6A331120223E577C007BB7E0 /* Caffe.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6A331135223E6321007BB7E0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6A331133223E631D007BB7E0 /* MenuService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6A331136223E6350007BB7E0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6A331111223E49B0007BB7E0 /* Assets.xcassets */,
+				6A331137223E6C8A007BB7E0 /* Caffes */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6A331137223E6C8A007BB7E0 /* Caffes */ = {
+			isa = PBXGroup;
+			children = (
+				6A331138223E6C9E007BB7E0 /* Caffe-01.json */,
+			);
+			path = Caffes;
+			sourceTree = "<group>";
+		};
+		6A33113C223E6FC7007BB7E0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6A33113A223E6F45007BB7E0 /* String+Path.swift */,
+				6A33113D223E7A84007BB7E0 /* Date+Day.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A331139223E6C9E007BB7E0 /* Caffe-01.json in Resources */,
 				6A331115223E49B0007BB7E0 /* LaunchScreen.storyboard in Resources */,
 				6A331112223E49B0007BB7E0 /* Assets.xcassets in Resources */,
 				6A331110223E49AF007BB7E0 /* Main.storyboard in Resources */,
@@ -160,9 +205,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A33113E223E7A84007BB7E0 /* Date+Day.swift in Sources */,
 				6A33110D223E49AF007BB7E0 /* SecondViewController.swift in Sources */,
 				6A33111E223E5120007BB7E0 /* Dish.swift in Sources */,
+				6A331134223E631D007BB7E0 /* MenuService.swift in Sources */,
 				6A331109223E49AF007BB7E0 /* AppDelegate.swift in Sources */,
+				6A33113B223E6F45007BB7E0 /* String+Path.swift in Sources */,
 				6A331121223E577C007BB7E0 /* Caffe.swift in Sources */,
 				6A33110B223E49AF007BB7E0 /* FirstViewController.swift in Sources */,
 			);

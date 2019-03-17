@@ -9,7 +9,20 @@
 import Foundation
 
 struct Dish {
-    var outlet: String
+    enum Category: String {
+        case econom = "ЭКОНОМ ОБЕД"
+        case dietary = "ДИЕТИЧЕСКИЕ БЛЮДА"
+        case cold = "ХОЛОДНЫЕ ЗАКУСКИ"
+        case first = "ПЕРВЫЕ БЛЮДА"
+        case second = "ВТОРЫЕ БЛЮДА"
+        case side = "ГАРНИРЫ"
+        case sauce = "СОУСЫ / ХЛЕБ"
+        case drink = "НАПИТКИ"
+        case other
+    }
+    
     var name: String
+    var outlet: String
     var price: String
+    var category: Category
 }
