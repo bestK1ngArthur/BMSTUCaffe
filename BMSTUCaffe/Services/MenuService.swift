@@ -20,6 +20,7 @@ class MenuService {
     }
     
     private enum DishKey: String {
+        case id
         case name
         case outlet
         case price
@@ -62,7 +63,8 @@ class MenuService {
     
         dishes = dishJSONs.compactMap({ json -> Dish? in
             
-            guard let name = json[DishKey.name.rawValue] as? String,
+            guard let id = json[DishKey.id.rawValue] as? Int,
+                let name = json[DishKey.name.rawValue] as? String,
                 let outlet = json[DishKey.outlet.rawValue] as? String,
                 let price = json[DishKey.price.rawValue] as? String,
                 let rawCategory = json[DishKey.category.rawValue] as? String else {
@@ -71,7 +73,7 @@ class MenuService {
             
             let category = Dish.Category(rawValue: rawCategory) ?? .other
 
-            return Dish(name: name, outlet: outlet, price: price, category: category)
+            return Dish(id: id, name: name, outlet: outlet, price: price, category: category)
         })
         
         return dishes

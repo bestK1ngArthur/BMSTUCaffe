@@ -21,6 +21,7 @@ struct Dish {
         case other
     }
     
+    var id: Int
     var name: String
     var outlet: String
     var price: String
