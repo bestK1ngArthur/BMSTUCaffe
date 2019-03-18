@@ -64,7 +64,8 @@ class CartPresenter: NSObject, UIViewControllerAnimatedTransitioning {
         
         container.addSubview(toView)
         
-        let offset: CGFloat = 200
+        let percent: CGFloat = 0.8
+        let offset: CGFloat = container.bounds.height * (1 - percent)
         toView.frame.size = CGSize(width: container.bounds.width, height: container.bounds.height - offset + 16)
         toView.frame.origin = CGPoint(x: 0, y: container.frame.height)
         
