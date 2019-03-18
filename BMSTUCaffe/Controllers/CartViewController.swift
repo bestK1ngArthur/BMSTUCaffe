@@ -10,11 +10,20 @@ import UIKit
 
 class CartViewController: UIViewController {
 
+    var darkView: UIView? {
+        didSet {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(close))
+            darkView?.addGestureRecognizer(tap)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @objc private func close() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 

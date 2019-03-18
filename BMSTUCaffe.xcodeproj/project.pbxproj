@@ -29,6 +29,7 @@
 		6A331150223EE12C007BB7E0 /* CartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A33114E223EE12C007BB7E0 /* CartView.xib */; };
 		6A331155223EFB88007BB7E0 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331154223EFB88007BB7E0 /* CartService.swift */; };
 		6A331157223F8D90007BB7E0 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331156223F8D90007BB7E0 /* Cart.swift */; };
+		6A331159223FEDDB007BB7E0 /* ShowCartSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331158223FEDDB007BB7E0 /* ShowCartSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		6A33114E223EE12C007BB7E0 /* CartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartView.xib; sourceTree = "<group>"; };
 		6A331154223EFB88007BB7E0 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 		6A331156223F8D90007BB7E0 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		6A331158223FEDDB007BB7E0 /* ShowCartSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCartSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				6A33110A223E49AF007BB7E0 /* MenuViewController.swift */,
 				6A33110C223E49AF007BB7E0 /* CartViewController.swift */,
+				6A33115B223FEE49007BB7E0 /* Segues */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -195,6 +198,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		6A33115B223FEE49007BB7E0 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				6A331158223FEDDB007BB7E0 /* ShowCartSegue.swift */,
+			);
+			path = Segues;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,6 +281,7 @@
 			files = (
 				6A33114F223EE12C007BB7E0 /* CartView.swift in Sources */,
 				6A33113E223E7A84007BB7E0 /* Date+Day.swift in Sources */,
+				6A331159223FEDDB007BB7E0 /* ShowCartSegue.swift in Sources */,
 				6A33110D223E49AF007BB7E0 /* CartViewController.swift in Sources */,
 				6A33111E223E5120007BB7E0 /* Dish.swift in Sources */,
 				6A331134223E631D007BB7E0 /* MenuService.swift in Sources */,

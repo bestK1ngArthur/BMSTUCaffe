@@ -94,20 +94,24 @@ class MenuViewController: UITableViewController {
         UIApplication.shared.keyWindow?.addSubview(cartView)
         
         self.cartContainer = cartView
-        self.cartContainer.isHidden = true
+        self.cartContainer.alpha = 0
+        
+        // Add tap gesture
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cartViewTapped))
+        cartView.addGestureRecognizer(tap)
     }
     
-    private func showCartView() {
+    func showCartView() {
 
         UIView.animate(withDuration: 0.3) {
-            self.cartContainer.isHidden = false
+            self.cartContainer.alpha = 1
         }
     }
     
-    private func hideCartView() {
+    func hideCartView() {
         
         UIView.animate(withDuration: 0.3) {
-            self.cartContainer.isHidden = true
+            self.cartContainer.alpha = 0
         }
     }
     
@@ -120,6 +124,17 @@ class MenuViewController: UITableViewController {
         
         showCartView()
         cartContainer.update(cart: cart)
+    }
+    
+    @objc private func cartViewTapped() {
+        
+        guard let destionation = storyboard?.instantiateViewController(withIdentifier: "NavigationCartViewController") else {
+            return
+        }
+
+        let segue = ShowCartSegue(identifier: ShowCartSegue.identifier, source: self, destination: destionation)
+        self.prepare(for: segue, sender: self)
+        segue.perform()
     }
     
     // MARK: UITableViewDataSource
