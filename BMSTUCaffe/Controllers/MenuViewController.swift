@@ -16,13 +16,21 @@ class MenuViewController: UITableViewController {
     }
     
     var sections: [Section] = []
-    var cartContainer: CartContainterView?
+
+    var cartContainer: CartContainterView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        addCartView()
+        addCartView()
+        updateCartView()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCartView(notification:)), name: CartService.notificationCartChanged, object: nil)
+        
+        initUI()
+    }
+    
+    private func initUI() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
         
@@ -74,6 +82,8 @@ class MenuViewController: UITableViewController {
         return sections
     }
     
+    // MARK: CartView
+    
     private func addCartView() {
         
         let cartViewHeight: CGFloat = 83
@@ -84,6 +94,32 @@ class MenuViewController: UITableViewController {
         UIApplication.shared.keyWindow?.addSubview(cartView)
         
         self.cartContainer = cartView
+        self.cartContainer.isHidden = true
+    }
+    
+    private func showCartView() {
+
+        UIView.animate(withDuration: 0.3) {
+            self.cartContainer.isHidden = false
+        }
+    }
+    
+    private func hideCartView() {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.cartContainer.isHidden = true
+        }
+    }
+    
+    @objc private func updateCartView(notification: Notification? = nil) {
+        
+        guard let cart = AppManager.shared.selectedCart else {
+            hideCartView()
+            return
+        }
+        
+        showCartView()
+        cartContainer.update(cart: cart)
     }
     
     // MARK: UITableViewDataSource

@@ -95,6 +95,22 @@ class MenuService {
         return caffes
     }
     
+    func getCaffe(_ id: Int) -> Caffe? {
+        let caffes = getCaffes()
+        
+        return caffes.first(where: { caffe -> Bool in
+            return caffe.id == id
+        })
+    }
+    
+    func getDish(_ id: Int, for caffe: Caffe) -> Dish? {
+        let dishes = getDishes(for: caffe)
+        
+        return dishes.first(where: { dish -> Bool in
+            return dish.id == id
+        })
+    }
+    
     // MARK: Private helpers
     
     private func getCaffesJSONs() -> [JSON] {

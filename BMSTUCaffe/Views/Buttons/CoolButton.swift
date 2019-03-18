@@ -48,6 +48,7 @@ class CoolButton: UIButton {
         substrate.backgroundColor = substrateColor
         substrate.layer.cornerRadius = frame.height / 2
         substrate.tag = substrateTag
+        substrate.isUserInteractionEnabled = false
         self.addSubview(substrate)
         self.sendSubviewToBack(substrate)
     }

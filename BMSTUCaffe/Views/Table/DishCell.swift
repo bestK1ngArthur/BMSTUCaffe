@@ -16,6 +16,8 @@ class DishCell: UITableViewCell {
     
     @IBOutlet weak var addButton: CoolButton!
     
+    private var dish: Dish?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -24,8 +26,17 @@ class DishCell: UITableViewCell {
     }
 
     func fillCell(dish: Dish) {
+        self.dish = dish
+        
         nameLabel.text = dish.name
         outletLabel.text = dish.outlet
         priceLabel.text = "\(dish.price)₽"
+    }
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        
+        if let dish = dish, let caffe = AppManager.shared.selectedCaffe {
+            AppManager.shared.cart.add(dish, for: caffe)
+        }
     }
 }

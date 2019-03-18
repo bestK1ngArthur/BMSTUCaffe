@@ -28,6 +28,7 @@
 		6A33114F223EE12C007BB7E0 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33114D223EE12C007BB7E0 /* CartView.swift */; };
 		6A331150223EE12C007BB7E0 /* CartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A33114E223EE12C007BB7E0 /* CartView.xib */; };
 		6A331155223EFB88007BB7E0 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331154223EFB88007BB7E0 /* CartService.swift */; };
+		6A331157223F8D90007BB7E0 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A331156223F8D90007BB7E0 /* Cart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		6A33114D223EE12C007BB7E0 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		6A33114E223EE12C007BB7E0 /* CartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartView.xib; sourceTree = "<group>"; };
 		6A331154223EFB88007BB7E0 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
+		6A331156223F8D90007BB7E0 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				6A33111D223E5120007BB7E0 /* Dish.swift */,
 				6A331120223E577C007BB7E0 /* Caffe.swift */,
+				6A331156223F8D90007BB7E0 /* Cart.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				6A331140223E85D2007BB7E0 /* AppManager.swift in Sources */,
 				6A33114B223ED1C6007BB7E0 /* CoolButton.swift in Sources */,
 				6A331145223EA6ED007BB7E0 /* UIImage+Color.swift in Sources */,
+				6A331157223F8D90007BB7E0 /* Cart.swift in Sources */,
 				6A331142223E8F7A007BB7E0 /* DishCell.swift in Sources */,
 				6A331147223EA72D007BB7E0 /* UIColor+Hex.swift in Sources */,
 				6A331121223E577C007BB7E0 /* Caffe.swift in Sources */,

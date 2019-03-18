@@ -42,6 +42,10 @@ class CartContainterView: UIView {
         
         cartView?.frame = self.bounds
     }
+    
+    func update(cart: Cart) {
+        cartView?.update(cart: cart)
+    }
 }
 
 class CartView: UIView {
@@ -49,10 +53,18 @@ class CartView: UIView {
     @IBOutlet weak var cartImageView: UIImageView!
     @IBOutlet weak var cartImageViewContainer: UIView!
     
+    @IBOutlet weak var dishesCountLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         cartImageViewContainer.backgroundColor = UIColor(rgb: 0xFFE74C)
         cartImageViewContainer.layer.cornerRadius = cartImageViewContainer.frame.height / 2
+    }
+    
+    func update(cart: Cart) {
+        dishesCountLabel.text = String(cart.dishes.count)
+        priceLabel.text = "\(cart.price)₽"
     }
 }

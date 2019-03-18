@@ -133,6 +133,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="13"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="addButtonTapped:" destination="nny-7Z-X2M" eventType="touchUpInside" id="nDl-Ea-NtN"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outlet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1V-zM-Zsw">
                                             <rect key="frame" x="78" y="40.5" width="276" height="17"/>

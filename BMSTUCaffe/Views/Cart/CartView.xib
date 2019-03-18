@@ -43,20 +43,28 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбрано блюд: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1F-dr-16v">
-                    <rect key="frame" x="72" y="20" width="131" height="21"/>
+                    <rect key="frame" x="76" y="20" width="131" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqk-HE-BL3">
+                    <rect key="frame" x="207" y="20" width="11" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="oqk-HE-BL3" firstAttribute="leading" secondItem="x1F-dr-16v" secondAttribute="trailing" id="3mo-7Q-kky"/>
                 <constraint firstItem="yxC-vF-baa" firstAttribute="leading" secondItem="B9N-jT-Wkw" secondAttribute="leading" constant="20" id="6g2-8r-MPE"/>
                 <constraint firstItem="x1F-dr-16v" firstAttribute="top" secondItem="B9N-jT-Wkw" secondAttribute="top" constant="20" id="FwR-Re-3tE"/>
                 <constraint firstItem="yxC-vF-baa" firstAttribute="top" secondItem="B9N-jT-Wkw" secondAttribute="top" constant="20" id="OHl-Z5-7cS"/>
-                <constraint firstItem="x1F-dr-16v" firstAttribute="leading" secondItem="yxC-vF-baa" secondAttribute="trailing" constant="8" id="b9j-rd-I6U"/>
+                <constraint firstItem="x1F-dr-16v" firstAttribute="leading" secondItem="yxC-vF-baa" secondAttribute="trailing" constant="12" id="b9j-rd-I6U"/>
                 <constraint firstItem="BbV-rl-dc8" firstAttribute="top" secondItem="B9N-jT-Wkw" secondAttribute="top" constant="20" id="eIE-uS-2R5"/>
                 <constraint firstAttribute="trailing" secondItem="BbV-rl-dc8" secondAttribute="trailing" constant="20" id="iYZ-fZ-2im"/>
+                <constraint firstItem="oqk-HE-BL3" firstAttribute="top" secondItem="B9N-jT-Wkw" secondAttribute="top" constant="20" id="xJZ-0Z-SzT"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
@@ -64,6 +72,8 @@
             <connections>
                 <outlet property="cartImageView" destination="8ns-rd-7ED" id="vK8-on-had"/>
                 <outlet property="cartImageViewContainer" destination="yxC-vF-baa" id="Kz1-fp-7xX"/>
+                <outlet property="dishesCountLabel" destination="oqk-HE-BL3" id="PUa-PU-uVE"/>
+                <outlet property="priceLabel" destination="BbV-rl-dc8" id="rq0-K0-4Fm"/>
             </connections>
             <point key="canvasLocation" x="255.07246376811597" y="-172.43303571428569"/>
         </view>
