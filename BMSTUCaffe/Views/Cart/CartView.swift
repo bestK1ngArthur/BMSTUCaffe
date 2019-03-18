@@ -31,10 +31,13 @@ class CartContainterView: UIView {
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOpacity = 0.3
         layer.shadowOffset = CGSize(width: 0, height: -1)
-        layer.shadowRadius = 3
+        layer.shadowRadius = 10
         layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale
+        
+        cartView?.layer.masksToBounds = true
+        cartView?.layer.cornerRadius = 20
     }
     
     override func layoutSubviews() {

@@ -28,15 +28,15 @@
                     <rect key="frame" x="20" y="20" width="44" height="44"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cart" translatesAutoresizingMaskIntoConstraints="NO" id="8ns-rd-7ED">
-                            <rect key="frame" x="7" y="7" width="30" height="30"/>
+                            <rect key="frame" x="8" y="8" width="30" height="30"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.90588235294117647" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="8ns-rd-7ED" secondAttribute="bottom" constant="7" id="Ajo-m4-lCX"/>
-                        <constraint firstItem="8ns-rd-7ED" firstAttribute="top" secondItem="yxC-vF-baa" secondAttribute="top" constant="7" id="Nty-vR-vYG"/>
-                        <constraint firstAttribute="trailing" secondItem="8ns-rd-7ED" secondAttribute="trailing" constant="7" id="Nur-X2-3X7"/>
-                        <constraint firstItem="8ns-rd-7ED" firstAttribute="leading" secondItem="yxC-vF-baa" secondAttribute="leading" constant="7" id="Y7f-6U-aaJ"/>
+                        <constraint firstAttribute="bottom" secondItem="8ns-rd-7ED" secondAttribute="bottom" constant="6" id="Ajo-m4-lCX"/>
+                        <constraint firstItem="8ns-rd-7ED" firstAttribute="top" secondItem="yxC-vF-baa" secondAttribute="top" constant="8" id="Nty-vR-vYG"/>
+                        <constraint firstAttribute="trailing" secondItem="8ns-rd-7ED" secondAttribute="trailing" constant="6" id="Nur-X2-3X7"/>
+                        <constraint firstItem="8ns-rd-7ED" firstAttribute="leading" secondItem="yxC-vF-baa" secondAttribute="leading" constant="8" id="Y7f-6U-aaJ"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
