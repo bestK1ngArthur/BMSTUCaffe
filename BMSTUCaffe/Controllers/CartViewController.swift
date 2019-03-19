@@ -10,6 +10,8 @@ import UIKit
 
 class CartViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     var darkView: UIView? {
         didSet {
             let tap = UITapGestureRecognizer(target: self, action: #selector(close))
@@ -24,6 +26,10 @@ class CartViewController: UIViewController {
 
     @objc private func close() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        close()
     }
 }
 

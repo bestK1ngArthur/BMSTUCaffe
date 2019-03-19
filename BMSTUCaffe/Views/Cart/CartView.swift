@@ -38,6 +38,7 @@ class CartContainterView: UIView {
         
         cartView?.layer.masksToBounds = true
         cartView?.layer.cornerRadius = 20
+        cartView?.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     override func layoutSubviews() {

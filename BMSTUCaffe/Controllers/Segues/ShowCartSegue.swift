@@ -104,8 +104,10 @@ private class CartDismisser: NSObject, UIViewControllerAnimatedTransitioning {
                 return
         }
         
+        let cartViewHeight: CGFloat = 83
+        
         UIView.animate(withDuration: 0.2, animations: {
-            fromView.frame.origin.y = container.bounds.height
+            fromView.frame.origin.y = container.bounds.height - cartViewHeight
             cartController.darkView?.alpha = 0
             menuController.showCartView()
         }) { (completed) in
