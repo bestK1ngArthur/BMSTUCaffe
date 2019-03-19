@@ -16,6 +16,7 @@ class MenuViewController: UITableViewController {
     }
     
     let cartViewHeight: CGFloat = 83
+    var cartViewCanUpdate = true
     
     var sections: [Section] = []
 
@@ -119,6 +120,7 @@ class MenuViewController: UITableViewController {
     }
     
     @objc func updateCartView(notification: Notification? = nil) {
+        guard cartViewCanUpdate else { return }
         
         guard let cart = AppManager.shared.selectedCart else {
             hideCartView()

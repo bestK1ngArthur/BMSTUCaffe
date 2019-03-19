@@ -71,6 +71,11 @@ class CartPresenter: NSObject, UIViewControllerAnimatedTransitioning {
         
         toView.clipsToBounds = true
         toView.layer.cornerRadius = 20
+
+        // Setup menu controller
+        
+        menuController.hideCartView()
+        menuController.cartViewCanUpdate = false
         
         // Start animation
         
@@ -78,7 +83,6 @@ class CartPresenter: NSObject, UIViewControllerAnimatedTransitioning {
             
             darkView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
             toView.frame.origin.y = offset
-            menuController.hideCartView()
             
         }) { (completed) in
             transitionContext.completeTransition(completed)
@@ -106,10 +110,12 @@ private class CartDismisser: NSObject, UIViewControllerAnimatedTransitioning {
         
         let cartViewHeight: CGFloat = 83
         
+        menuController.cartViewCanUpdate = true
+        menuController.updateCartView()
+
         UIView.animate(withDuration: 0.2, animations: {
             fromView.frame.origin.y = container.bounds.height - cartViewHeight
             cartController.darkView?.alpha = 0
-            menuController.updateCartView()
         }) { (completed) in
             transitionContext.completeTransition(completed)
         }

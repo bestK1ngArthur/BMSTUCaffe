@@ -34,6 +34,7 @@ class CartViewController: UIViewController {
     
     func initUI() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
         tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: clearButtonHeight, right: 0)
@@ -66,7 +67,7 @@ class CartViewController: UIViewController {
     }
 }
 
-extension CartViewController: UITableViewDataSource {
+extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cart?.dishes.count ?? 0
@@ -81,5 +82,20 @@ extension CartViewController: UITableViewDataSource {
         cell.fillCell(dish: dish)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        guard editingStyle == .delete,
+            let dish = cart?.dishes[indexPath.row],
+            let caffe = AppManager.shared.selectedCaffe else {
+                return
+        }
+        
+        AppManager.shared.cart.remove(dish, for: caffe)
     }
 }
