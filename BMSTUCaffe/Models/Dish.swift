@@ -25,5 +25,5 @@ struct Dish {
     var name: String
     var outlet: String
     var price: String
-    var category: Category
+    var category: Category    
 }

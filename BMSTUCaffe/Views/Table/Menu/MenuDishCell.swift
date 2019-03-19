@@ -1,5 +1,5 @@
 //
-//  DishCell.swift
+//  MenuDishCell.swift
 //  BMSTUCaffe
 //
 //  Created by a.belkov on 17/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DishCell: UITableViewCell {
+class MenuDishCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var outletLabel: UILabel!

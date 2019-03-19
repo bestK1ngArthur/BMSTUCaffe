@@ -15,6 +15,8 @@ class MenuViewController: UITableViewController {
         var dishes: [Dish]
     }
     
+    let cartViewHeight: CGFloat = 83
+    
     var sections: [Section] = []
 
     var cartContainer: CartContainterView!
@@ -33,6 +35,8 @@ class MenuViewController: UITableViewController {
     private func initUI() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
+        tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: cartViewHeight, right: 0)
+        tableView.scrollIndicatorInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: cartViewHeight, right: 0)
         
         if let sections = constructSections() {
             self.sections = sections
@@ -86,7 +90,6 @@ class MenuViewController: UITableViewController {
     
     private func addCartView() {
         
-        let cartViewHeight: CGFloat = 83
         let y: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height - cartViewHeight
         let frame = CGRect(x: 0, y: y, width: view.bounds.width, height: cartViewHeight)
         let cartView = CartContainterView(frame: frame)
@@ -137,8 +140,8 @@ class MenuViewController: UITableViewController {
         segue.perform()
     }
     
-    // MARK: UITableViewDataSource
-    
+    // MARK: Table view
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
@@ -162,7 +165,7 @@ class MenuViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DishCell.self)) as? DishCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuDishCell.self)) as? MenuDishCell else {
             return UITableViewCell()
         }
         
