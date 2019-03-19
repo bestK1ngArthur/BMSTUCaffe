@@ -31,7 +31,7 @@ class MenuViewController: UITableViewController {
         
         initUI()
     }
-    
+        
     private func initUI() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
@@ -105,20 +105,20 @@ class MenuViewController: UITableViewController {
     }
     
     func showCartView() {
-
+        
         UIView.animate(withDuration: 0.3) {
             self.cartContainer.alpha = 1
         }
     }
     
     func hideCartView() {
-        
+
         UIView.animate(withDuration: 0.3) {
             self.cartContainer.alpha = 0
         }
     }
     
-    @objc private func updateCartView(notification: Notification? = nil) {
+    @objc func updateCartView(notification: Notification? = nil) {
         
         guard let cart = AppManager.shared.selectedCart else {
             hideCartView()

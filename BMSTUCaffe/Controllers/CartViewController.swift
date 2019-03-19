@@ -57,6 +57,11 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func clearButtonTapped(_ sender: Any) {
+        
+        if let caffe = AppManager.shared.selectedCaffe {
+            AppManager.shared.cart.removeAll(for: caffe)
+        }
+        
         close()
     }
 }

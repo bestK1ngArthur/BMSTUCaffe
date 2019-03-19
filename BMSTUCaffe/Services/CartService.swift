@@ -45,9 +45,7 @@ class CartService {
             UserDefaults.standard.setValue([cartValue], forKey: cartKey)
         }
         
-        if let cart = get(for: caffe) {
-            postNotification(cart: cart)
-        }
+        postNotification(cart: get(for: caffe))
     }
     
     func remove(_ dish: Dish, for caffe: Caffe) {
@@ -60,14 +58,30 @@ class CartService {
         cart.remove(at: index)
         UserDefaults.standard.setValue(cart, forKey: cartKey)
         
-        if let cart = get(for: caffe) {
-            postNotification(cart: cart)
+        postNotification(cart: get(for: caffe))
+    }
+    
+    func removeAll(for caffe: Caffe) {
+        guard var strings = UserDefaults.standard.value(forKey: cartKey) as? [String] else {
+            return
         }
+        
+        strings.removeAll { string -> Bool in
+            if let value = generateCartValue(from: string), value.caffeID == caffe.id {
+                return true
+            }
+            
+            return false
+        }
+        
+        UserDefaults.standard.setValue(strings, forKey: cartKey)
+        
+        postNotification(cart: get(for: caffe))
     }
     
     // MARK: Notifications
     
-    private func postNotification(cart: Cart) {
+    private func postNotification(cart: Cart? = nil) {
         NotificationCenter.default.post(name: CartService.notificationCartChanged, object: cart)
     }
     
