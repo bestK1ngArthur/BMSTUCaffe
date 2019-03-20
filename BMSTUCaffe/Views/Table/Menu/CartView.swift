@@ -45,7 +45,8 @@ class CartView: UIView {
     
     @IBOutlet weak var dishesCountLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
+    @IBOutlet weak var outletLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -56,5 +57,9 @@ class CartView: UIView {
     func update(cart: Cart) {
         dishesCountLabel.text = String(cart.dishes.count)
         priceLabel.text = "\(cart.price)₽"
+        
+        if let outlet = cart.maxOutletComponent {
+            outletLabel.text = "\(outlet.value) \(outlet.name.rawValue)"
+        }
     }
 }

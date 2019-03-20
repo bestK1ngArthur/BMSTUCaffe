@@ -12,6 +12,7 @@ class CartGeneralCell: UITableViewCell {
 
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var dishesCountLabel: UILabel!
+    @IBOutlet weak var outletLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,5 +22,9 @@ class CartGeneralCell: UITableViewCell {
     func fillCell(cart: Cart) {
         dishesCountLabel.text = String(cart.dishes.count)
         priceLabel.text = "\(cart.price)₽"
+        
+        if let outlet = cart.maxOutletComponent {
+            outletLabel.text = "\(outlet.value) \(outlet.name.rawValue)"
+        }
     }
 }

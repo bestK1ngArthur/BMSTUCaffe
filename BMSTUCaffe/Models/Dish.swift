@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum ComponentName: String {
+    case grams = "граммов"
+    case milliliters = "миллилитров"
+}
+
+typealias OutletComponent = (name: ComponentName, value: Int)
+
 struct Dish {
     enum Category: String {
         case econom = "ЭКОНОМ ОБЕД"
@@ -49,5 +56,25 @@ struct Dish {
         case .other:
             return UIImage(named: "CategoryOther")
         }
+    }
+    
+    var outletComponents: [OutletComponent] {
+        var components: [OutletComponent] = []
+        
+        let rawComponents = outlet.components(separatedBy: "/")
+        for rawComponent in rawComponents {
+            guard let value = Int(rawComponent.trimmingCharacters(in: CharacterSet(charactersIn: "01234567890.").inverted)) else {
+                continue
+            }
+            
+            var component = ComponentName.grams
+            if rawComponents.contains("мл") {
+                component = .milliliters
+            }
+            
+            components.append((component, value))
+        }
+        
+        return components
     }
 }

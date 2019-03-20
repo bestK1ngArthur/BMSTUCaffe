@@ -23,6 +23,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var cartContainer: CartContainterView!
     @IBOutlet weak var emptyView: UIView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()

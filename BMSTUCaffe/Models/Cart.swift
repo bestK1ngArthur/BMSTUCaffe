@@ -11,6 +11,7 @@ import Foundation
 struct Cart {
     var dishes: [Dish]
     var caffe: Caffe
+    
     var price: String {
         var price = 0
         for dish in dishes {
@@ -20,5 +21,33 @@ struct Cart {
         }
         
         return String(price)
+    }
+    
+    var outletComponents: [OutletComponent] {
+        var gramms: Int = 0
+        var millimeters: Int = 0
+        
+        dishes.forEach { dish in
+            dish.outletComponents.forEach({ (name: ComponentName, value: Int) in
+                
+                switch name {
+                case .grams:
+                    gramms += value
+                case .milliliters:
+                    millimeters += value
+                }
+            })
+        }
+        
+        return [(name: ComponentName.grams, value: gramms), (name: ComponentName.milliliters, value: millimeters)]
+    }
+    
+    var maxOutletComponent: OutletComponent? {
+        
+        let sorted = outletComponents.sorted { (first, second) -> Bool in
+            return first.value > second.value
+        }
+        
+        return sorted.first
     }
 }
