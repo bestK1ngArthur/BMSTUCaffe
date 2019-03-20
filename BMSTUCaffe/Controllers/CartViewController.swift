@@ -87,16 +87,20 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        
+        // If last cell, deny removing action
+        return cart?.dishes.count != indexPath.row
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         guard editingStyle == .delete,
-            let dish = cart?.dishes[indexPath.row],
+            let cart = cart, indexPath.row != cart.dishes.count,
             let caffe = AppManager.shared.selectedCaffe else {
                 return
         }
+        
+        let dish = cart.dishes[indexPath.row]
         
         // FIXME: Fix remove animation
 //        tableView.beginUpdates()
