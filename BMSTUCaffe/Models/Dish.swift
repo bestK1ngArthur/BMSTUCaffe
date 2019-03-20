@@ -35,7 +35,7 @@ struct Dish {
         case .dietary:
             return UIImage(named: "CategoryDietary")
         case .cold:
-            return UIImage(named: "CategoryDietary")
+            return UIImage(named: "CategoryCold")
         case .first:
             return UIImage(named: "CategoryFirst")
         case .second:
