@@ -15,7 +15,7 @@ class MenuViewController: UITableViewController {
         var dishes: [Dish]
     }
     
-    let cartViewHeight: CGFloat = 83
+    let cartViewHeight: CGFloat = 89
     var cartViewCanUpdate = true
     
     var sections: [Section] = []

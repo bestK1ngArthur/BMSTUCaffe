@@ -13,6 +13,7 @@ class CartDishCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var outletLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var categoryImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +24,6 @@ class CartDishCell: UITableViewCell {
         nameLabel.text = dish.name
         outletLabel.text = dish.outlet
         priceLabel.text = "\(dish.price)₽"
+        categoryImageView.image = dish.categoryImage
     }
 }

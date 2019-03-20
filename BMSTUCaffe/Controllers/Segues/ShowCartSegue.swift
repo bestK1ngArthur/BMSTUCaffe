@@ -108,7 +108,7 @@ private class CartDismisser: NSObject, UIViewControllerAnimatedTransitioning {
                 return
         }
         
-        let cartViewHeight: CGFloat = 83
+        let cartViewHeight: CGFloat = 89
         
         menuController.cartViewCanUpdate = true
         menuController.updateCartView()

@@ -13,6 +13,7 @@ class MenuDishCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var outletLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var categoryImageView: UIImageView!
     
     @IBOutlet weak var addButton: CoolButton!
     
@@ -31,6 +32,7 @@ class MenuDishCell: UITableViewCell {
         nameLabel.text = dish.name
         outletLabel.text = dish.outlet
         priceLabel.text = "\(dish.price)₽"
+        categoryImageView.image = dish.categoryImage
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
