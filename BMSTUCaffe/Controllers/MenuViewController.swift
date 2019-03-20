@@ -108,6 +108,9 @@ class MenuViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             self.cartContainer.alpha = 1
         }
+        
+        tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: cartContainer.bounds.height, right: 0)
+        tableView.scrollIndicatorInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: cartContainer.bounds.height, right: 0)
     }
     
     func hideCartView() {
@@ -115,6 +118,9 @@ class MenuViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             self.cartContainer.alpha = 0
         }
+        
+        tableView.contentInset = UIEdgeInsets.zero
+        tableView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
     
     @objc func updateCartView(notification: Notification? = nil) {
