@@ -74,8 +74,8 @@ class CartPresenter: NSObject, UIViewControllerAnimatedTransitioning {
 
         // Setup menu controller
         
-        menuController.hideCartView()
-        menuController.cartViewCanUpdate = false
+//        menuController.hideCartView()
+//        menuController.cartViewCanUpdate = false
         
         // Start animation
         
@@ -83,7 +83,7 @@ class CartPresenter: NSObject, UIViewControllerAnimatedTransitioning {
             
             darkView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
             toView.frame.origin.y = offset
-            
+                        
         }) { (completed) in
             transitionContext.completeTransition(completed)
         }
@@ -108,13 +108,13 @@ private class CartDismisser: NSObject, UIViewControllerAnimatedTransitioning {
                 return
         }
         
-        let cartViewHeight: CGFloat = 89
+//        let cartViewHeight: CGFloat = 89
         
-        menuController.cartViewCanUpdate = true
+//        menuController.cartViewCanUpdate = true
         menuController.updateCartView()
 
         UIView.animate(withDuration: 0.2, animations: {
-            fromView.frame.origin.y = container.bounds.height - cartViewHeight
+            fromView.frame.origin.y = container.bounds.height //- cartViewHeight
             cartController.darkView?.alpha = 0
         }) { (completed) in
             transitionContext.completeTransition(completed)

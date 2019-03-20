@@ -13,6 +13,7 @@ class CartViewController: UIViewController {
     let clearButtonHeight: CGFloat = 40 + 50 + 16
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     
     var cart: Cart?
     
@@ -45,6 +46,7 @@ class CartViewController: UIViewController {
         
         cart = AppManager.shared.selectedCart
         tableView.reloadData()
+        emptyView.isHidden = (cart?.dishes.count ?? 0) > 0
     }
     
     // MARK: Actions

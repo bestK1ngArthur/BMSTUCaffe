@@ -8,41 +8,45 @@
 
 import UIKit
 
-class MenuViewController: UITableViewController {
+class MenuViewController: UIViewController {
     
     struct Section {
         var name: String
         var dishes: [Dish]
     }
     
-    let cartViewHeight: CGFloat = 89
     var cartViewCanUpdate = true
     
     var sections: [Section] = []
 
-    var cartContainer: CartContainterView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cartContainer: CartContainterView!
+    @IBOutlet weak var emptyView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        addCartView()
-        updateCartView()
+        initUI()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateCartView(notification:)), name: CartService.notificationCartChanged, object: nil)
         
-        initUI()
+        updateCartView()
     }
         
     private func initUI() {
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
-        tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: cartViewHeight, right: 0)
-        tableView.scrollIndicatorInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: cartViewHeight, right: 0)
+        tableView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: cartContainer.bounds.height, right: 0)
+        tableView.scrollIndicatorInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: cartContainer.bounds.height, right: 0)
         
-        if let sections = constructSections() {
+        addCartView()
+        
+        if let sections = constructSections(), sections.count > 0 {
             self.sections = sections
         } else {
-            // TODO: Show empty screen
+            emptyView.isHidden = false
+            cartContainer.alpha = 0
         }
     }
     
@@ -82,7 +86,9 @@ class MenuViewController: UITableViewController {
             }
         }
         
-        sections.append(Section(name: currentSection!.rawValue, dishes: currentSectionDishes))
+        if let currentSection = currentSection {
+            sections.append(Section(name: currentSection.rawValue, dishes: currentSectionDishes))
+        }
 
         return sections
     }
@@ -90,19 +96,11 @@ class MenuViewController: UITableViewController {
     // MARK: CartView
     
     private func addCartView() {
-        
-        let y: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height - cartViewHeight
-        let frame = CGRect(x: 0, y: y, width: view.bounds.width, height: cartViewHeight)
-        let cartView = CartContainterView(frame: frame)
-
-        UIApplication.shared.keyWindow?.addSubview(cartView)
-        
-        self.cartContainer = cartView
         self.cartContainer.alpha = 0
         
         // Add tap gesture
         let tap = UITapGestureRecognizer(target: self, action: #selector(cartViewTapped))
-        cartView.addGestureRecognizer(tap)
+        cartContainer.addGestureRecognizer(tap)
     }
     
     func showCartView() {
@@ -121,8 +119,8 @@ class MenuViewController: UITableViewController {
     
     @objc func updateCartView(notification: Notification? = nil) {
         guard cartViewCanUpdate else { return }
-        
-        guard let cart = AppManager.shared.selectedCart else {
+
+        guard let cart = AppManager.shared.selectedCart, cart.dishes.count > 0 else {
             hideCartView()
             return
         }
@@ -141,22 +139,23 @@ class MenuViewController: UITableViewController {
         self.prepare(for: segue, sender: self)
         segue.perform()
     }
-    
-    // MARK: Table view
+}
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].dishes.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let tableHeader = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuHeader.self)) as? MenuHeader else {
             return UIView()
         }
@@ -166,7 +165,7 @@ class MenuViewController: UITableViewController {
         return tableHeader
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuDishCell.self)) as? MenuDishCell else {
             return UITableViewCell()
         }

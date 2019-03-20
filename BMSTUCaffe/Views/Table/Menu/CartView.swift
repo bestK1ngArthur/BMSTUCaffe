@@ -10,21 +10,12 @@ import UIKit
 
 class CartContainterView: UIView {
     
-    private var cartView: CartView?
+    @IBOutlet weak var cartView: CartView!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
-        guard let view = Bundle.main.loadNibNamed(String(describing: CartView.self), owner: self, options: nil)?.first as? CartView else {
-            return
-        }
-        
-        cartView = view
-        self.addSubview(view)
+        backgroundColor = .clear
         
         // Add shadow
         layer.masksToBounds = false
@@ -36,19 +27,14 @@ class CartContainterView: UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale
         
-        cartView?.layer.masksToBounds = true
-        cartView?.layer.cornerRadius = 20
-        cartView?.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        cartView?.frame = self.bounds
+        // Add round corners
+        cartView.layer.masksToBounds = true
+        cartView.layer.cornerRadius = 20
+        cartView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     func update(cart: Cart) {
-        cartView?.update(cart: cart)
+        cartView.update(cart: cart)
     }
 }
 
