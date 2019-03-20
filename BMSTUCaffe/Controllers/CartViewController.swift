@@ -66,10 +66,16 @@ class CartViewController: UIViewController {
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cart?.dishes.count ?? 0
+        return (cart?.dishes.count ?? -1) + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cart = cart, indexPath.row == cart.dishes.count,
+         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CartGeneralCell.self)) as? CartGeneralCell {
+            cell.fillCell(cart: cart)
+            return cell
+        }
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CartDishCell.self)) as? CartDishCell,
             let dish = cart?.dishes[indexPath.row] else {
             return UITableViewCell()
