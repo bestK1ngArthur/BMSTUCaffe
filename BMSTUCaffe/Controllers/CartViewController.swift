@@ -43,11 +43,7 @@ class CartViewController: UIViewController {
     
     @objc private func updateCart(notification: Notification? = nil) {
         
-        guard let cart = AppManager.shared.selectedCart else {
-            return
-        }
-        
-        self.cart = cart
+        cart = AppManager.shared.selectedCart
         tableView.reloadData()
     }
     
@@ -96,6 +92,10 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate {
                 return
         }
         
+        // FIXME: Fix remove animation
+//        tableView.beginUpdates()
         AppManager.shared.cart.remove(dish, for: caffe)
+//        tableView.deleteRows(at: [indexPath], with: .fade)
+//        tableView.endUpdates()
     }
 }
